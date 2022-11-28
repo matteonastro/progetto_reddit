@@ -6,13 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  addArticle(title: HTMLInputElement, link: HTMLInputElement): boolean {
-    let t = title.value;
-    let v= link.value;
-    console.log(`Adding article title: `+t+ ` and link: `+ v);
-    console.log(`Adding article title: `+title.value+ ` and link: `+ link.value);
-    console.log(`Adding article title: ${title.value} and link: ${link.value}`);
+  articles = new Array<string>();
+  addArticle(spamText: HTMLInputElement, num: HTMLInputElement): boolean {
+    
+    console.log(`spamText: ${spamText.value} and spamNum: ${num.value}`);
+    let cont = Number(num.value);
+    for(let i:number =0; i< cont; i++)  //Ciclo For in typescript
+ {
+  this.articles.push(spamText.value);
+ }
+
     return false;
   }
 
 }
+
